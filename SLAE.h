@@ -1,5 +1,5 @@
 //
-// Created by ivan on 06.10.20.
+// Created by Ivan on 06.10.20.
 //
 
 #ifndef NUMERICALMETHODSLABS_LAB1_H
@@ -8,6 +8,7 @@
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <cstring>
 
 using std::cin;
 using std::cout;
@@ -15,9 +16,46 @@ using std::endl;
 using std::pair;
 using std::abs;
 using std::vector;
+
+
+/** simple abstractions for better understanding code**/
 typedef vector<vector<double>> Matrix;
+typedef vector<double> RowMatrix;
+
+/** structure which identifies P, L and U matrices in
+ * PA = LU factorization **/
+struct P_L_U
+{
+	Matrix P;
+	Matrix L;
+	Matrix U;
+};
+
+
+/** some constant variables **/
 const double EPS = 1e-9;
 const int INF = 10000000;
+
+/** helpful functions **/
+void printMatrix(Matrix& m)
+{
+	for (auto & i : m)
+	{
+		for (double j : i)
+		{
+			cout << j << " ";
+		}
+		cout << endl;
+	}
+}
+void printRowMatrix(RowMatrix& m)
+{
+	for (double i : m)
+	{
+		cout << i << " ";
+	}
+	cout << '\n';
+}
 
 
 /**
@@ -30,17 +68,20 @@ const int INF = 10000000;
  * @param
  * matrix which defines SLAE
  */
-Matrix Gauss(Matrix matrix)
+// TODO : test this function  for values when n > m
+pair<int,RowMatrix> solveSLAEByGauss(Matrix matrix)
 {
 	int n = matrix.size();
 	int m = static_cast<int>(matrix[0].size()) - 1;
 
-	vector<double> solution(m + 1);
+	vector<double> solution(m);
 
-	vector<bool> arb(m,false);
+	vector<bool> arb(m, false);
 
-	for (int i = 0; i < n; ++i)
+	for (int i = 0; i < std::min(n,m); ++i)
 	{
+
+
 		int pivot = i;
 		/** searching for pivot element **/
 		for (int j = i; j < n; ++j)
@@ -55,7 +96,6 @@ Matrix Gauss(Matrix matrix)
 		arb[i] = true;
 
 		matrix[i].swap(matrix[pivot]);
-
 		double div = matrix[i][i];
 
 		for (int j = i; j <= m; ++j)
@@ -71,24 +111,23 @@ Matrix Gauss(Matrix matrix)
 				matrix[j][k] -= (mul * matrix[i][k]);
 			}
 		}
+
 	}
 
-	int ind = n - 1;
+	int ind = m - 1;
 
-	solution[ind--] = matrix[n - 1][m];
-
-	for (int i = n - 2; i >= 0; --i)
+	for (int i = m - 1; i >= 0 ; --i)
 	{
-		double cur_sol = matrix[i][m];
-		for (int j = m - 1; j > i; --j)
+		double x_i = matrix[i][m];
+		for (int j = m - 1; j > i ; --j)
 		{
-			cur_sol -= (matrix[i][j] * solution[j]);
+			x_i -= (matrix[i][j] * solution[j]);
 		}
-		solution[ind--] = cur_sol;
+		solution[ind--] = x_i;
 	}
 
 	/** if mistake of some answer is bigger than some
-	 * EPS , than there are not any solution**/
+	 * EPS , than there are no any solution**/
 	for (int i = 0; i < n; ++i)
 	{
 		double sum = 0;
@@ -98,12 +137,13 @@ Matrix Gauss(Matrix matrix)
 			return {0,solution};
 	}
 
-	/** checking for infinitely mane solutions **/
+	/** checking for infinitely many solutions **/
 	for (int i = 0; i < m; ++i)
 	{
 		if(!arb[i]) return {INF,solution};
 	}
 	return {1,solution};
+
 }
 
 
@@ -169,8 +209,6 @@ double Determinant(Matrix matrix)
  * @return rank
  * Method also uses Gauss elimination method
  */
-
-
 int Rank(Matrix matrix)
 {
 	int n = matrix.size();
@@ -319,6 +357,168 @@ pair<Matrix ,Matrix> PA_LU_factorization(Matrix A)
 
 	return {L, A};
 }
+
+/** returns P L and U matrices in PA = LU factorization **/
+P_L_U get_P_L_U(Matrix A)
+{
+	if(A.size() != A[0].size())
+	{
+		throw std::invalid_argument("Matrix must be squared!");
+	}
+	int n = A.size();
+
+	/** creates and fills matrix with zeros **/
+	Matrix L(n,vector<double>(n,0));
+	Matrix P(n,RowMatrix(n,0));
+	for (int i = 0; i < n; ++i) P[i][i] = 1;
+
+
+	/// starting particularly like in Gauss elimination algorithm
+	for (int i = 0; i < n; ++i)
+	{
+		int pivot = i;
+		for (int j = i; j < n; ++j)
+		{
+			if (abs(A[pivot][i]) < abs(A[j][i]))
+				pivot = j;
+		}
+
+		/// if current max element in column = 0, there are no solution
+		if(abs(A[pivot][i]) < EPS)
+			return {Matrix (),Matrix (),Matrix ()};
+
+		/// swapping matrices
+		A[i].swap(A[pivot]);
+		L[i].swap(L[pivot]);
+		P[i].swap(P[pivot]);
+
+		for (int j = i + 1; j < n; ++j)
+		{
+			double mul = A[j][i] / A[i][i];
+			L[j][i] = mul;
+			for (int k = 0; k < n; ++k)
+			{
+				A[j][k] -= (A[i][k] * mul);
+			}
+		}
+	}
+
+	/** fills diagonal elements with one **/
+	for (int i = 0; i < n; ++i) L[i][i] = 1;
+
+	return {P, L, A};
+}
+
+/**
+ * @brief
+ * 		multiplies two matrices
+ * @exception
+ * 		returns exception if number of columns of
+ * 		first matrix A is not equal to number of rows
+ * 		in matrix B
+ * 		time complexity is O(n^3)
+ */
+Matrix multiply(Matrix& A,Matrix& B)
+{
+	if(A[0].size() != B.size())
+	{
+		throw std::invalid_argument("You can't multiply such matrices!");
+	}
+
+	Matrix C(A.size(),vector<double>(B[0].size(),0));
+
+	for (int i = 0; i < A.size(); ++i)
+	{
+		for (int j = 0; j < B[0].size(); ++j)
+		{
+			for (int k = 0; k < B.size(); ++k)
+			{
+				C[i][j] += (A[i][k] * B[k][j]);
+			}
+		}
+	}
+	return C;
+}
+
+
+/**
+ * @brief
+ * 		Solves SLAE using PA = LU factorisation
+ * 		Works only on quadratic matrices
+ *
+ * 	algorithm description
+ * 		LUX = PB
+ * 		LC  = PB
+ * 		UX  = C
+ * @exception
+ * 		throws an exception if matrix A is not quadratic.
+ * @param
+ * 		Parameter is matrix which identifies A and B
+ * 		matrices;
+ * @returns
+ * 	RowMatrix size n if solution exist and is single,
+ * 	else return ZeroRowMatrix
+ */
+RowMatrix solveSLAEByLUFactorization(Matrix& matrix)
+{
+	if(matrix.size() != matrix[0].size() - 1)
+	{
+		throw std::invalid_argument("Matrix A must be quadratic!");
+	}
+	int n = matrix.size();
+
+	Matrix A(n,RowMatrix(n));
+	Matrix B(n,RowMatrix(1,0)); /// ColumnMatrix
+
+	/** copying matrix into A and B**/
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < n; ++j)
+			A[i][j] = matrix[i][j];
+
+		B[i][0] = matrix[i][n];
+	}
+
+
+	P_L_U matrices = get_P_L_U(A);
+	Matrix& P = matrices.P,&L = matrices.L, &U = matrices.U;
+
+	/// if factorization not exist, single solution also not exist
+	if(matrices.L.empty()) return RowMatrix(0);
+
+	/// actual algorithm
+	B = multiply(P,B);
+
+	RowMatrix C(n,0); /// temporary matrix
+	RowMatrix X(n,0); /// answer matrix
+
+	for (int i = 0; i < n; ++i)
+	{
+		double c_i = B[i][0];
+		for (int j = 0; j < i; ++j)
+		{
+			c_i -= (C[j] * L[i][j]);
+		}
+		C[i] = c_i;
+	}
+
+	for (int i = n - 1; i >= 0 ; --i)
+	{
+		double x_i = C[i];
+		for (int j = n - 1; j > i ; --j)
+		{
+			x_i -=(U[i][j] * X[j]);
+		}
+		x_i /= U[i][i];
+		X[i] = x_i;
+	}
+
+	return X;
+}
+
+
+
+
 #endif //NUMERICALMETHODSLABS_LAB1_H
 
 
