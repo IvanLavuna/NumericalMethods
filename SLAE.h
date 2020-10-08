@@ -30,7 +30,7 @@ const int INF = 10000000;
  * @param
  * matrix which defines SLAE
  */
-pair<int,vector<double>> Gauss(vector<vector<double>> matrix)
+Matrix Gauss(Matrix matrix)
 {
 	int n = matrix.size();
 	int m = static_cast<int>(matrix[0].size()) - 1;
@@ -42,25 +42,28 @@ pair<int,vector<double>> Gauss(vector<vector<double>> matrix)
 	for (int i = 0; i < n; ++i)
 	{
 		int pivot = i;
+		/** searching for pivot element **/
 		for (int j = i; j < n; ++j)
 		{
-			if (std::abs(matrix[i][pivot]) < std::abs(matrix[j][pivot]))
+			if (abs(matrix[pivot][i]) < abs(matrix[j][i]))
 				pivot = j;
 		}
-		if(std::abs(matrix[pivot][i]) < EPS)
+
+		if(abs(matrix[pivot][i]) < EPS)
 			continue;
+
 		arb[i] = true;
-		for (int j = 0; j <= m; ++j)
-		{
-			std::swap(matrix[i][j],matrix[pivot][j]);
-		}
+
+		matrix[i].swap(matrix[pivot]);
+
 		double div = matrix[i][i];
+
 		for (int j = i; j <= m; ++j)
 		{
 			matrix[i][j] /= div;
 		}
 
-		for (int j = i+1; j < n; ++j)
+		for (int j = i + 1; j < n; ++j)
 		{
 			double mul = matrix[j][i];
 			for (int k = 0; k <= m; ++k)
@@ -91,7 +94,7 @@ pair<int,vector<double>> Gauss(vector<vector<double>> matrix)
 		double sum = 0;
 		for (int j = 0; j < m; ++j)
 			sum += solution[j] * matrix[i][j];
-		if (std::abs (sum - matrix[i][m]) > EPS)
+		if (abs (sum - matrix[i][m]) > EPS)
 			return {0,solution};
 	}
 
@@ -109,8 +112,7 @@ pair<int,vector<double>> Gauss(vector<vector<double>> matrix)
  *	throws an exception of type invalid argument if matrix is not quadratic
  *
  **/
-template <typename T>
-double Determinant(vector<vector<T>> matrix)
+double Determinant(Matrix matrix)
 {
 	if(matrix.size() != matrix[0].size())
 	{
@@ -128,7 +130,7 @@ double Determinant(vector<vector<T>> matrix)
 		/** searching for pivot element **/
 		for (int j = i; j < n; ++j)
 		{
-			if (std::abs(matrix[i][pivot]) < std::abs(matrix[j][pivot]))
+			if (abs(matrix[pivot][i]) < abs(matrix[j][i]))
 				pivot = j;
 		}
 
@@ -139,8 +141,7 @@ double Determinant(vector<vector<T>> matrix)
 		if(pivot != i)
 		{
 			sign = !sign;
-			for (int j = 0; j < n; ++j)
-				std::swap(matrix[i][j], matrix[pivot][j]);
+			matrix[i].swap(matrix[pivot]);
 		}
 
 		/** multiplying determinant by some diagonal elem */
@@ -169,8 +170,8 @@ double Determinant(vector<vector<T>> matrix)
  * Method also uses Gauss elimination method
  */
 
-template <typename T>
-int Rank(vector<vector<T>> matrix)
+
+int Rank(Matrix matrix)
 {
 	int n = matrix.size();
 	int m = static_cast<int>(matrix[0].size()) - 1;
@@ -181,16 +182,19 @@ int Rank(vector<vector<T>> matrix)
 		int pivot = i;
 		for (int j = i; j < n; ++j)
 		{
-			if (std::abs(matrix[i][pivot]) < std::abs(matrix[j][pivot]))
+			if (abs(matrix[pivot][i]) < abs(matrix[j][i]))
 				pivot = j;
 		}
+
 		if(std::abs(matrix[pivot][i]) < EPS)
 			continue;
+
+		/** incrementing runk **/
 		rank++;
-		for (int j = 0; j <= m; ++j)
-		{
-			std::swap(matrix[i][j],matrix[pivot][j]);
-		}
+
+		/** swapping two rows**/
+		matrix[i].swap(matrix[pivot]);
+
 		double div = matrix[i][i];
 		for (int j = i; j <= m; ++j)
 		{
@@ -255,7 +259,66 @@ pair<Matrix,Matrix> LU_factorization(Matrix matrix)
 }
 
 
+/**
+ * @brief
+ * 		This function performs PA = LU factorization
+ * 		(with swapping some rows)
+ * 		and returns L and U matrices
+ * @param
+ * 		vector of size n with vectors of size n
+ * @exception
+ * 		throws an exception if matrix is not squared
+ *
+ * @return
+ * 		returns L and U matrices if they exist, else
+ * 		returns pair of zero matrices
+ */
+pair<Matrix ,Matrix> PA_LU_factorization(Matrix A)
+{
+	if(A.size() != A[0].size())
+	{
+		throw std::invalid_argument("Matrix must be squared!");
+	}
+	int n = A.size();
 
+	/** creates and fills matrix with zeros**/
+	Matrix L(n,vector<double>(n,0));
+
+
+	/// starting particularly like in Gauss elimination algorithm
+	for (int i = 0; i < n; ++i)
+	{
+		int pivot = i;
+		for (int j = i; j < n; ++j)
+		{
+			if (abs(A[pivot][i]) < abs(A[j][i]))
+				pivot = j;
+		}
+
+		/// if current max element in column = 0, there are no solution
+		if(abs(A[pivot][i]) < EPS)
+			return {Matrix (),Matrix ()};
+
+		/// swapping matrices
+		A[i].swap(A[pivot]);
+		L[i].swap(L[pivot]);
+
+		for (int j = i + 1; j < n; ++j)
+		{
+			double mul = A[j][i] / A[i][i];
+			L[j][i] = mul;
+			for (int k = 0; k < n; ++k)
+			{
+				A[j][k] -= (A[i][k] * mul);
+			}
+		}
+	}
+
+	/** fills diagonal elements with one **/
+	for (int i = 0; i < n; ++i) L[i][i] = 1;
+
+	return {L, A};
+}
 #endif //NUMERICALMETHODSLABS_LAB1_H
 
 

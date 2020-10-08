@@ -7,12 +7,13 @@
 
 int main()
 {
-	Matrix matrix = {	{4,4,-4},
-				        {1,3,1},
-				        {2,1,5}};
+	Matrix matrix = { {2,1,5},
+					 {4,4,-4},
+					 {1,3,1}
+				        };
 	try
 	{
-		pair<Matrix ,Matrix > p = LU_factorization(matrix);
+		pair<Matrix ,Matrix > p = PA_LU_factorization(matrix);
 
 		for (int i = 0; i < matrix.size(); ++i)
 		{
