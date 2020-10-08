@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.cpp
+SLAE.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.h
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.h
+iostream
+-
+fstream
+-
+sstream
+-
+vector
+-
+

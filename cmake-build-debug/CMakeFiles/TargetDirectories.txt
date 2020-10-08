@@ -1,0 +1,3 @@
+/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir

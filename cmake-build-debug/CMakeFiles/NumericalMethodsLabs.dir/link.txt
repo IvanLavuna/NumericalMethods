@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o  -o NumericalMethodsLabs 
