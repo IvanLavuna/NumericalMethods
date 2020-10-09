@@ -4,11 +4,23 @@
 
 #ifndef NUMERICALMETHODSLABS_LAB1_H
 #define NUMERICALMETHODSLABS_LAB1_H
+
+// TODO: rewrite it with some namespace if it becomes too large
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <vector>
 #include <cstring>
+#include <cmath>
+
+// TODO : make some defines to simplify
+//  syntax of setting or unsetting flags
+
+/// Some defines to work more easily with flags
+#define SET_UNDEFINED_BEHAVIOUR state = UNDEFINED_BEHAVIOUR
+#define SET_ONE_SOLUTION state 		  = ONE_SOLUTION
+#define SET_INFINITY_BEHAVIOUR state  = INFINITY_SOLUTIONS
+#define SET_NO_SOLUTION state 		  = NO_SOLUTION
 
 using std::cin;
 using std::cout;
@@ -24,17 +36,37 @@ typedef vector<double> RowMatrix;
 
 /** structure which identifies P, L and U matrices in
  * PA = LU factorization **/
+
+// TODO : rewrite everything with this structures
 struct P_L_U
 {
 	Matrix P;
 	Matrix L;
 	Matrix U;
 };
-
+struct L_U
+{
+	Matrix L;
+	Matrix U;
+};
 
 /** some constant variables **/
 const double EPS = 1e-9;
 const int INF = 10000000;
+
+/** Flags to work with functions **/
+/** Depending on what type of function you call
+ * different flag will be set or unset
+ * **/
+
+// TODO : rewrite every function with flags
+enum  FLAG {
+	ONE_SOLUTION = 0,
+	INFINITY_SOLUTIONS ,
+	UNDEFINED_BEHAVIOUR,
+	NO_SOLUTION
+} state; /// variable that defines state of function
+
 
 /** helpful functions **/
 void printMatrix(Matrix& m)
@@ -57,7 +89,60 @@ void printRowMatrix(RowMatrix& m)
 	cout << '\n';
 }
 
+/**
+ * Returns true if matrix is summetric otherwise returns false
+ * **/
+bool isSymmetric(Matrix & A)
+{
+	if(A.size() != A[0].size()) return false;
+	for (int i = 0; i < A.size(); ++i)
+	{
+		for (int j = i+1; j < A[i].size(); ++j)
+		{
+			if(A[i][j] != A[j][i]) return false;
+		}
+	}
+	return true;
+}
 
+/**
+ * Transparent matrix A is matrix whose rows equals to columns of
+ * same matrix A(swapping rows with columns)
+ * **/
+Matrix getTransparentMatrix(Matrix& A)
+{
+	Matrix B(A[0].size(),RowMatrix(A.size(),0));
+
+	for (int i = 0; i < A.size(); ++i)
+	{
+		for (int j = 0; j < A[i].size(); ++j)
+		{
+			B[j][i] = A[i][j];
+		}
+	}
+	return B;
+}
+
+/**
+ *
+ * @param A -> matrix that will be copied
+ * @param n -> copy first n rows
+ * @param m -> copy first m columns
+ * @return matrix A[0 : n - 1][0 : m - 1]
+ */
+Matrix copyPart(Matrix& A,int n,int m)
+{
+	Matrix B(n,RowMatrix(m,0));
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < m; ++j)
+			B[i][j] = A[i][j];
+	}
+	return B;
+}
+///////////////////////////////////////////////////////////
+
+/** LINEAR ALGEBRA **/
 /**
  * @brief
  * 	solves SLAE of equation using Gauss method
@@ -151,7 +236,7 @@ pair<int,RowMatrix> solveSLAEByGauss(Matrix matrix)
  *	throws an exception of type invalid argument if matrix is not quadratic
  *
  **/
-double Determinant(Matrix matrix)
+double getDeterminant(Matrix matrix)
 {
 	if(matrix.size() != matrix[0].size())
 	{
@@ -208,7 +293,7 @@ double Determinant(Matrix matrix)
  * @return rank
  * Method also uses Gauss elimination method
  */
-int Rank(Matrix matrix)
+int getRank(Matrix matrix)
 {
 	int n = matrix.size();
 	int m = static_cast<int>(matrix[0].size()) - 1;
@@ -567,6 +652,130 @@ Matrix getInverseMatrix(Matrix A)
 	}
 	return I;
 }
+
+
+/**
+ * @brief
+ * 	Returns LU( A = L * L_tr) factorization by Cholesky
+ *	Matrix must be symmetric. If factorization is not
+ *	possible if returns  zero matrices
+ *
+ *	@Note
+ *		Maybe for this algorithm to work elements of matrix must be positive
+ *	Throws an @exception if matrix is not symmetric
+ *
+ *	@returns zero matrix if there is NOT exist LU factorization
+ **/
+L_U get_L_U_factorizationByCholesky(Matrix A)
+{
+	if(!isSymmetric(A))
+		throw std::invalid_argument("Matrix must be symmetric!");
+
+	int n = A.size();
+	Matrix L(n,RowMatrix(n,0));
+
+	/// using formula proposed by Wikipedia, I managed to get
+	/// this factorization
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j <= i; ++j)
+		{
+			if(i == j)
+			{
+				L[i][i] = A[i][i];
+				for (int k = 0; k <= i - 1; ++k)
+				{
+					L[i][i] -= L[i][k] * L[i][k];
+				}
+				if(L[i][i] < 0)
+				{
+					SET_UNDEFINED_BEHAVIOUR;
+					return L_U();
+				}
+				L[i][i] = sqrt(L[i][i]);
+			}
+			else
+			{
+				L[i][j] = A[i][j];
+				for (int k = 0; k <= j - 1; ++k)
+				{
+					L[i][j] -= L[i][k] * L[j][k];
+				}
+				if(abs(L[j][j]) < EPS)
+				{
+				SET_NO_SOLUTION;
+				return L_U();
+				}
+				L[i][j] /= L[j][j];
+			}
+		}
+	}
+
+	Matrix U = getTransparentMatrix(L);
+
+	SET_ONE_SOLUTION;
+
+	return {L, U};
+}
+
+
+/**
+ * @param is matrix M which defines SLAE
+ *
+ * @brief
+ *	Solves SYMMETRIC SLAE by Cholesky
+ *
+ * @exception
+ *	Throws an exception if matrix A is not symmetric
+ *
+ */
+RowMatrix solveSLAEByCholesky(Matrix& M)
+{
+	Matrix A = copyPart(M,M.size(),(int)M[0].size() - 1);
+	if(!isSymmetric(A))
+		throw std::invalid_argument("Matrix must be symmetric to be solved by"
+							  " Cholesky!");
+
+	int n = A.size();
+
+	RowMatrix B(n,0);
+	for (int i = 0; i < n; ++i) B[i] = M[i][n];
+
+	L_U LU = get_L_U_factorizationByCholesky(A);
+	if(state != ONE_SOLUTION)
+	{
+		SET_UNDEFINED_BEHAVIOUR;
+		return RowMatrix();
+	}
+
+	Matrix& L = LU.L, &U = LU.U;
+	RowMatrix C(n,0); /// temporary matrix
+	RowMatrix X(n,0); /// answer matrix
+
+	for (int i = 0; i < n; ++i)
+	{
+		double c_i = B[i];
+		for (int j = 0; j < i; ++j)
+		{
+			c_i -= (C[j] * L[i][j]);
+		}
+		C[i] = c_i / L[i][i];
+	}
+
+	for (int i = n - 1; i >= 0 ; --i)
+	{
+		double x_i = C[i];
+		for (int j = n - 1; j > i ; --j)
+		{
+			x_i -=(U[i][j] * X[j]);
+		}
+		x_i /= U[i][i];
+		X[i] = x_i;
+	}
+	SET_ONE_SOLUTION;
+	return X;
+}
+
 
 
 #endif //NUMERICALMETHODSLABS_LAB1_H
