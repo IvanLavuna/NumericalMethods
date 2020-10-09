@@ -43,7 +43,7 @@ void printMatrix(Matrix& m)
 	{
 		for (double j : i)
 		{
-			cout << j << " ";
+			cout <<std::fixed << j << " ";
 		}
 		cout << endl;
 	}
@@ -68,7 +68,6 @@ void printRowMatrix(RowMatrix& m)
  * @param
  * matrix which defines SLAE
  */
-// TODO : test this function  for values when n > m
 pair<int,RowMatrix> solveSLAEByGauss(Matrix matrix)
 {
 	int n = matrix.size();
@@ -516,7 +515,58 @@ RowMatrix solveSLAEByLUFactorization(Matrix& matrix)
 	return X;
 }
 
+/**
+ *	finds inverse of a matrix using Gauss-Jordan
+ *	algorithm.
+ *	@returns zero matrix if there is not exist inverse matrix
+ *	Gives @exception if matrix is not quadratic
+ **/
+Matrix getInverseMatrix(Matrix A)
+{
+	if(A.size() != A[0].size())
+		throw std::invalid_argument("Matrix must be squared!");
 
+	int n = A.size();
+
+	/** Initially I is E matrix,but after algorithm it becomes Inverse **/
+	Matrix I(n,RowMatrix(n,0));
+	for(int i = 0; i < n; i++) I[i][i] = 1;
+
+	for (int i = 0; i < n; ++i)
+	{
+		int pivot = i;
+		for (int j = i; j < n; ++j)
+		{
+			if( abs(A[j][i]) > abs(A[pivot][i]))
+				pivot = j;
+		}
+
+		if(abs(A[pivot][i]) < EPS) /// there do not exist I matrix
+			return Matrix ();
+
+		A[i].swap(A[pivot]);
+		I[i].swap(I[pivot]);
+
+		for (int j = 0; j < n; ++j)
+		{
+			if(j == i) continue;
+			double mul = A[j][i] / A[i][i];
+			for (int k = 0; k < n; ++k)
+			{
+				A[j][k] -= (A[i][k] * mul);
+				I[j][k] -= (I[i][k] * mul);
+			}
+
+		}
+
+	}
+	for (int i = 0; i < n; ++i)
+	{
+		for (int j = 0; j < n; ++j)
+			I[i][j] /= A[i][i];
+	}
+	return I;
+}
 
 
 #endif //NUMERICALMETHODSLABS_LAB1_H

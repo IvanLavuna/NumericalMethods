@@ -7,18 +7,16 @@
 
 int main()
 {
-	Matrix matrix = {
-					 {1,3,1,2,  6},
-					 {2,1,5,12,  5},
-					 {4,4,-4,13, 0},
-					 {11,3,1,129,  6},
-					 {4,4,-4,1203, 0}};
+	Matrix matrix = {{2, 5, 7},
+					{6, 3, 4},
+					{5, -2, -3}};
 	try
 	{
-		pair<int, RowMatrix> m2 = solveSLAEByGauss(matrix);
-		cout << m2.first << "\n";
-		printRowMatrix(m2.second);
+		Matrix I = getInverseMatrix(matrix);
+		Matrix B = multiply(I,matrix);
+		printMatrix(I);
 		cout << endl;
+		printMatrix(B);
 
 	}
 	catch (std::exception& exception)
