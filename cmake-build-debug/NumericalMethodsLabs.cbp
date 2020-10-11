@@ -44,6 +44,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/src"/>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/headers"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -67,6 +69,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/src"/>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/headers"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -84,13 +88,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.cpp">
-			<Option target="NumericalMethodsLabs"/>
-		</Unit>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.h">
-			<Option target="NumericalMethodsLabs"/>
-		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.h">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/CMakeLists.txt">

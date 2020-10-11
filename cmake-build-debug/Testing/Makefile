@@ -100,14 +100,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/Testing/CMakeFiles/progress.marks
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Testing/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 clean
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Testing/clean
 .PHONY : clean
 
 # The main clean target
@@ -117,85 +117,18 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Testing/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 preinstall
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Testing/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-#=============================================================================
-# Target rules for targets named NumericalMethodsLabs
-
-# Build rule for target.
-NumericalMethodsLabs: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 NumericalMethodsLabs
-.PHONY : NumericalMethodsLabs
-
-# fast build rule for target.
-NumericalMethodsLabs/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/build
-.PHONY : NumericalMethodsLabs/fast
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-src/SLAE.o: src/SLAE.cpp.o
-
-.PHONY : src/SLAE.o
-
-# target to build an object file
-src/SLAE.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o
-.PHONY : src/SLAE.cpp.o
-
-src/SLAE.i: src/SLAE.cpp.i
-
-.PHONY : src/SLAE.i
-
-# target to preprocess a source file
-src/SLAE.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.i
-.PHONY : src/SLAE.cpp.i
-
-src/SLAE.s: src/SLAE.cpp.s
-
-.PHONY : src/SLAE.s
-
-# target to generate assembly for a file
-src/SLAE.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s
-.PHONY : src/SLAE.cpp.s
 
 # Help Target
 help:
@@ -205,13 +138,6 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... NumericalMethodsLabs"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... src/SLAE.o"
-	@echo "... src/SLAE.i"
-	@echo "... src/SLAE.s"
 .PHONY : help
 
 
@@ -223,6 +149,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

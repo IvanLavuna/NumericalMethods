@@ -90,29 +90,29 @@ CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp -o CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s
 
-CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
-CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o: ../SLAE.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
+CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: ../src/SLAE.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp
 
-CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.cpp > CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.i
+CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.i
 
-CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/SLAE.cpp -o CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.s
+CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s
 
 # Object files for target NumericalMethodsLabs
 NumericalMethodsLabs_OBJECTS = \
 "CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o" \
-"CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o"
+"CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o"
 
 # External object files for target NumericalMethodsLabs
 NumericalMethodsLabs_EXTERNAL_OBJECTS =
 
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o
-NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o
+NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/build.make
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable NumericalMethodsLabs"

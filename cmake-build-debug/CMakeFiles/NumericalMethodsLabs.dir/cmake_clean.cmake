@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/NumericalMethodsLabs.dir/SLAE.cpp.o"
   "CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o"
+  "CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o"
   "NumericalMethodsLabs"
   "NumericalMethodsLabs.pdb"
 )
