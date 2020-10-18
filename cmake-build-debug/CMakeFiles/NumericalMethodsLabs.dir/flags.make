@@ -6,5 +6,5 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ivan/CLionProjects/NumericalMethodsLabs/src -I/home/ivan/CLionProjects/NumericalMethodsLabs/headers 
+CXX_INCLUDES = -I/home/ivan/CLionProjects/NumericalMethodsLabs/src -I/home/ivan/CLionProjects/NumericalMethodsLabs/include -I/home/ivan/CLionProjects/NumericalMethodsLabs/testing 
 

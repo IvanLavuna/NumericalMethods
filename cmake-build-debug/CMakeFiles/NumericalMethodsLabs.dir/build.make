@@ -77,18 +77,18 @@ include CMakeFiles/NumericalMethodsLabs.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/NumericalMethodsLabs.dir/flags.make
 
-CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
-CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp
+CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
+CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: ../testing/Gauss_Jordan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp
 
-CMakeFiles/NumericalMethodsLabs.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp > CMakeFiles/NumericalMethodsLabs.dir/main.cpp.i
+CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp > CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i
 
-CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp -o CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s
+CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp -o CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s
 
 CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
 CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: ../src/SLAE.cpp
@@ -103,19 +103,49 @@ CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s
 
+CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
+CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o: ../src/LargeDem.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/LargeDem.cpp
+
+CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/LargeDem.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.i
+
+CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/LargeDem.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.s
+
+CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
+CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: ../src/Basic.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp
+
+CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i
+
+CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s
+
 # Object files for target NumericalMethodsLabs
 NumericalMethodsLabs_OBJECTS = \
-"CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o" \
-"CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o"
+"CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o" \
+"CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o" \
+"CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o" \
+"CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
 
 # External object files for target NumericalMethodsLabs
 NumericalMethodsLabs_EXTERNAL_OBJECTS =
 
-NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o
+NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o
+NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o
+NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/build.make
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable NumericalMethodsLabs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable NumericalMethodsLabs"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NumericalMethodsLabs.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

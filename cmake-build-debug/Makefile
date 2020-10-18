@@ -143,32 +143,59 @@ NumericalMethodsLabs/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/build
 .PHONY : NumericalMethodsLabs/fast
 
-main.o: main.cpp.o
+src/Basic.o: src/Basic.cpp.o
 
-.PHONY : main.o
+.PHONY : src/Basic.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/Basic.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o
+.PHONY : src/Basic.cpp.o
 
-main.i: main.cpp.i
+src/Basic.i: src/Basic.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Basic.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Basic.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i
+.PHONY : src/Basic.cpp.i
 
-main.s: main.cpp.s
+src/Basic.s: src/Basic.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Basic.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Basic.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s
+.PHONY : src/Basic.cpp.s
+
+src/LargeDem.o: src/LargeDem.cpp.o
+
+.PHONY : src/LargeDem.o
+
+# target to build an object file
+src/LargeDem.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o
+.PHONY : src/LargeDem.cpp.o
+
+src/LargeDem.i: src/LargeDem.cpp.i
+
+.PHONY : src/LargeDem.i
+
+# target to preprocess a source file
+src/LargeDem.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.i
+.PHONY : src/LargeDem.cpp.i
+
+src/LargeDem.s: src/LargeDem.cpp.s
+
+.PHONY : src/LargeDem.s
+
+# target to generate assembly for a file
+src/LargeDem.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.s
+.PHONY : src/LargeDem.cpp.s
 
 src/SLAE.o: src/SLAE.cpp.o
 
@@ -197,6 +224,33 @@ src/SLAE.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.s
 .PHONY : src/SLAE.cpp.s
 
+testing/Gauss_Jordan.o: testing/Gauss_Jordan.cpp.o
+
+.PHONY : testing/Gauss_Jordan.o
+
+# target to build an object file
+testing/Gauss_Jordan.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o
+.PHONY : testing/Gauss_Jordan.cpp.o
+
+testing/Gauss_Jordan.i: testing/Gauss_Jordan.cpp.i
+
+.PHONY : testing/Gauss_Jordan.i
+
+# target to preprocess a source file
+testing/Gauss_Jordan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i
+.PHONY : testing/Gauss_Jordan.cpp.i
+
+testing/Gauss_Jordan.s: testing/Gauss_Jordan.cpp.s
+
+.PHONY : testing/Gauss_Jordan.s
+
+# target to generate assembly for a file
+testing/Gauss_Jordan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s
+.PHONY : testing/Gauss_Jordan.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -206,12 +260,18 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... NumericalMethodsLabs"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/Basic.o"
+	@echo "... src/Basic.i"
+	@echo "... src/Basic.s"
+	@echo "... src/LargeDem.o"
+	@echo "... src/LargeDem.i"
+	@echo "... src/LargeDem.s"
 	@echo "... src/SLAE.o"
 	@echo "... src/SLAE.i"
 	@echo "... src/SLAE.s"
+	@echo "... testing/Gauss_Jordan.o"
+	@echo "... testing/Gauss_Jordan.i"
+	@echo "... testing/Gauss_Jordan.s"
 .PHONY : help
 
 

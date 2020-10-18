@@ -1,11 +1,1 @@
-1) somehow test main functions in SLAE.h file:
-    write some generator functions TestGenerator
-    and test each function for some solutions
-
-2) write Makefile so that
-    a) dynamic library can be build
-    b) static library can be build
-    c) libraries can be placed into users lib directories
-    d) include files can be placed into users include directory
-
-3) Divide .cpp with .h files
+1)

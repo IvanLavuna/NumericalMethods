@@ -45,7 +45,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/src"/>
-					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/headers"/>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/include"/>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/testing"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -70,7 +71,8 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/src"/>
-					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/headers"/>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/include"/>
+					<Add directory="/home/ivan/CLionProjects/NumericalMethodsLabs/testing"/>
 					<Add directory="/usr/include/c++/7"/>
 					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
 					<Add directory="/usr/include/c++/7/backward"/>
@@ -88,13 +90,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp">
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/include/Basic.h">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/include/LargeDem.h">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/LargeDem.cpp">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.h">
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/CMakeLists.txt">

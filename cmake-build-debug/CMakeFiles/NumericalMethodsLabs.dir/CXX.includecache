@@ -6,7 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/ivan/CLionProjects/NumericalMethodsLabs/main.cpp
+../include/Basic.h
 iostream
 -
+fstream
+-
+sstream
+-
+vector
+-
+cstring
+-
+cmath
+-
+complex
+-
+
+../include/SLAE.h
+Basic.h
+../include/Basic.h
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp
+SLAE.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/testing/SLAE.h
 

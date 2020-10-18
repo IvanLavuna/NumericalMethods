@@ -1,0 +1,130 @@
+    1)
+     assign executable file-mode (x) to the executable file "a.out", via command
+     "chmod a+x filename" (add executable file-mode "+x" to all users "a+x").
+    2)
+   $ gcc -o hello hello.c
+   $ chmod a+x hello
+   $ ./hello
+
+    3)
+  A few commonly-used GCC compiler options are:
+
+  $ g++ -Wall -g -o Hello.exe Hello.cpp
+
+
+    4)
+ -o: specifies the output executable filename.
+ -Wall: prints "all" Warning messages.
+ -g: generates additional symbolic debuggging information for use with gdb debugger.
+
+    5)
+ // Compile-only with -c option
+ > g++ -c -Wall -g Hello.cpp
+ // Link object file(s) into an executable
+ > g++ -g -o Hello.exe Hello.o
+
+    6)
+ Suppose that your program has two source files: file1.cpp, file2.cpp. You could compile all of them in a single command:
+
+ > g++ -o myprog.exe file1.cpp file2.cpp
+
+    7)
+ To compile and link C/C++ program into a shared
+ library (".dll" in Windows, ".so" in Unixes), use -shared option
+
+    8)
+ Pre-processing: via the GNU C Preprocessor (cpp.exe), which includes the headers (#include) and expands the macros (#define).
+ > cpp hello.c > hello.i
+ The resultant intermediate file "hello.i" contains the expanded source code.
+
+    9)
+ Compilation: The compiler compiles the pre-processed source code into assembly code for a specific processor.
+ > gcc -S hello.i
+ The -S option specifies to produce assembly code, instead of object code.
+ The resultant assembly file is "hello.s".
+
+    10)
+Assembly: The assembler (as.exe) converts the assembly code into machine code in the object file "hello.o".
+> as -o hello.o hello.s
+
+    11)
+ Linker: Finally, the linker (ld.exe) links the object code with the library code to produce an
+ executable file "hello.exe".
+ > ld -o hello.exe hello.o ...libraries...
+
+    12)
+    You can see the detailed compilation process by enabling -v (verbose) option. For example,
+
+    > gcc -v -o hello.exe hello.c
+
+13)
+    The include-paths are specified via -Idir option (or environment variable CPATH)
+
+14)
+The library-path is specified via -Ldir
+The linker searches the so-called library-paths for libraries needed to
+link the program into an executable. The library-path is specified via -Ldir option
+(uppercase 'L' followed by the directory path) (or environment variable LIBRARY_PATH).
+In addition, you also have to specify the library name. In Unixes, the library libxxx.a is
+specified via -lxxx option (lowercase letter 'l', without the prefix "lib" and ".a" extension).
+
+15)
+default include-paths in your system used by the "GNU C Preprocessor" via "cpp -v":
+
+> cpp -v
+
+16)
+Try running the compilation in verbose mode (-v) to study the library-paths (-L)
+ and libraries (-l) used in your system:
+
+> gcc -v -o hello.exe hello.c
+......
+-L/usr/lib/gcc/x86_64-pc-cygwin/6.4.0
+-L/usr/x86_64-pc-cygwin/lib
+-L/usr/lib
+-L/lib
+-lgcc_s     // libgcc_s.a
+-lgcc       // libgcc.a
+-lcygwin    // libcygwin.a
+-ladvapi32  // libadvapi32.a
+-lshell32   // libshell32.a
+-luser32    // libuser32.a
+-lkernel32  // libkernel32.a
+
+
+17)
+GCC uses the following environment variables:
+
+PATH: For searching the executables and run-time shared libraries (.dll, .so).
+CPATH: For searching the include-paths for headers. It is searched after paths specified in -I<dir> options. C_INCLUDE_PATH and CPLUS_INCLUDE_PATH can be used to specify C and C++ headers if the particular language was indicated in pre-processing.
+LIBRARY_PATH: For searching library-paths for link libraries. It is searched after paths specified in -L<dir> options.
+
+18)
+The utility "ldd" examines an executable and displays a list of the shared libraries that it needs. For example,
+
+> ldd hello.exe
+ntdll.dll => /cygdrive/c/WINDOWS/SYSTEM32/ntdll.dll (0x7ff9ba3c0000)
+KERNEL32.DLL => /cygdrive/c/WINDOWS/System32/KERNEL32.DLL (0x7ff9b9880000)
+KERNELBASE.dll => /cygdrive/c/WINDOWS/System32/KERNELBASE.dll (0x7ff9b6a60000)
+SYSFER.DLL => /cygdrive/c/WINDOWS/System32/SYSFER.DLL (0x6ec90000)
+ADVAPI32.dll => /cygdrive/c/WINDOWS/System32/ADVAPI32.dll (0x7ff9b79a0000)
+msvcrt.dll => /cygdrive/c/WINDOWS/System32/msvcrt.dll (0x7ff9b9100000)
+sechost.dll => /cygdrive/c/WINDOWS/System32/sechost.dll (0x7ff9b9000000)
+RPCRT4.dll => /cygdrive/c/WINDOWS/System32/RPCRT4.dll (0x7ff9b9700000)
+cygwin1.dll => /usr/bin/cygwin1.dll (0x180040000)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

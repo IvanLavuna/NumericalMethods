@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/NumericalMethodsLabs.dir/main.cpp.o"
+  "CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
+  "CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o"
   "CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o"
+  "CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o"
   "NumericalMethodsLabs"
   "NumericalMethodsLabs.pdb"
 )

@@ -9,108 +9,14 @@
 #ifndef NUMERICALMETHODSLABS_LAB1_H
 #define NUMERICALMETHODSLABS_LAB1_H
 
-
-
-
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <vector>
-#include <cstring>
-#include <cmath>
-
-
-/// Some defines to work more easily with flags
-#define SET_UNDEFINED_BEHAVIOUR state = UNDEFINED_BEHAVIOUR
-#define SET_ONE_SOLUTION state 		  = ONE_SOLUTION
-#define SET_INFINITY_SOLUTIONS state  = INFINITY_SOLUTIONS
-#define SET_NO_SOLUTION state 		  = NO_SOLUTION
-
-#define STRINGIFY(x) #x
-#define TOSTRING(x) STRINGIFY(x)
-#define AT __FILE__ ":" TOSTRING(__LINE__)
-#define ERROR_MESSAGE(DESC) ("error: " AT "\n" "Description: " DESC "\n")
-
+#include "Basic.h"
 
 /** Numerical methods space **/
 namespace nm
 {
-	using std::cin;
-	using std::cout;
-	using std::endl;
-	using std::pair;
-	using std::abs;
-	using std::vector;
 
 
-/** simple abstractions for better understanding code**/
-	typedef vector<vector<double>> Matrix;
-	typedef vector<double> RowMatrix;
-
-/** structure which identifies P, L and U matrices in
- * PA = LU factorization **/
-
-	struct P_L_U
-	{
-		Matrix P;
-		Matrix L;
-		Matrix U;
-	};
-	struct L_U
-	{
-		Matrix L;
-		Matrix U;
-	};
-
-/** some constant variables **/
-	const double EPS = 1e-9;
-	const int INF = 10000000;
-
-/** Flags to work with functions **/
-/** Depending on what type of function you call
- * different flag will be set or unset
- * **/
-
-// TODO : rewrite every function with flags
-	enum FLAG
-	{
-		ONE_SOLUTION = 0,
-		INFINITY_SOLUTIONS,
-		UNDEFINED_BEHAVIOUR,
-		NO_SOLUTION
-	} state; /// variable that defines state of function
-
-
-/** helpful functions **/
-	void printMatrix(Matrix &m);
-
-	void printRowMatrix(RowMatrix &m);
-
-/**
- * Returns true if matrix is summetric otherwise returns false
- * **/
-	bool isSymmetric(Matrix &A);
-
-/**
- * Transparent matrix A is matrix whose rows equals to columns of
- * same matrix A(swapping rows with columns)
- * **/
-	Matrix getTransparentMatrix(Matrix &A);
-
-	Matrix getTransparentMatrix(RowMatrix &A);
-
-/**
- *
- * @param A -> matrix that will be copied
- * @param n -> copy first n rows
- * @param m -> copy first m columns
- * @return matrix A[0 : n - 1][0 : m - 1]
- */
-	Matrix copyPart(Matrix &A, int n, int m);
-
-///////////////////////////////////////////////////////////
-
-/** LINEAR ALGEBRA **/
+							/** LINEAR ALGEBRA **/
 /**
  * @brief
  * 	solves SLAE of equation using Gauss method
@@ -183,6 +89,7 @@ namespace nm
  * 		in matrix B
  * 		time complexity is O(n^3)
  */
+	// TODO : insert this function to Basic.h
 	Matrix multiply(Matrix &A, Matrix &B);
 
 /**
@@ -246,7 +153,38 @@ namespace nm
  *
  */
 	RowMatrix solveSLAEByMethodOfTurns(Matrix A);
+
+/**
+ * Підраховує число обумовленості матриці
+ * Чим більшим є число cond A , ти більша може бути відносна похибка
+ * cond(A) = ||A|| * inverse(||A||)
+ **/
+ // TODO: insert this function into Basic.h
+	double conditionNumber(Matrix& A);
+
+	/**
+	 * Matrix norm is the biggest sum in all rows
+	 * **/
+	// TODO: insert this function into Basic.h
+	double MatrixNorm(Matrix& A);
+
+	/**
+	 * vector norm of order p is
+	 * sqrt( sum( (x[i]) ^ p) ^ (1/p)), i = 1 ... n
+	 * maks norm = max(abs(x[i])), i = 1 ... n
+	 * @param A
+	 * @return
+	 */
+	// TODO: insert this function into Basic.h
+	double VectorNorm(RowMatrix& A,int p);
+
+	/**
+	 * Solves SLAE with complex numbers using Gauss-Jordan
+	 **/
+	ComplexRow solveSLAEWithComplexElements(ComplexMatrix A);
 }
+
+
 
 #endif //NUMERICALMETHODSLABS_LAB1_H
 
