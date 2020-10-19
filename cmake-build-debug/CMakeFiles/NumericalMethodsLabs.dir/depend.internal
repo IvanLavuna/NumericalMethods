@@ -4,10 +4,10 @@
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o
  ../include/Basic.h
  /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp
-CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o
+CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o
  ../include/Basic.h
- ../include/LargeDem.h
- /home/ivan/CLionProjects/NumericalMethodsLabs/src/LargeDem.cpp
+ /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp
+ /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.h
 CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o
  ../include/Basic.h
  ../include/SLAE.h
@@ -16,3 +16,9 @@ CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o
  ../include/Basic.h
  ../include/SLAE.h
  /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp
+ /home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.h
+CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o
+ ../include/Basic.h
+ ../include/SLAE.h
+ /home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp
+ /home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.h

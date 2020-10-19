@@ -90,22 +90,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/include/Basic.h">
-			<Option target="NumericalMethodsLabs"/>
-		</Unit>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/include/LargeDem.h">
-			<Option target="NumericalMethodsLabs"/>
-		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/LargeDem.cpp">
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
-		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/SLAE.cpp">
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.h">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp">
+			<Option target="NumericalMethodsLabs"/>
+		</Unit>
+		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.h">
 			<Option target="NumericalMethodsLabs"/>
 		</Unit>
 		<Unit filename="/home/ivan/CLionProjects/NumericalMethodsLabs/CMakeLists.txt">

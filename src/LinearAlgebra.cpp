@@ -2,7 +2,7 @@
 // Created by ivan on 06.10.20.
 //
 
-#include "SLAE.h"
+#include "LinearAlgebra.h"
 
 namespace nm
 {

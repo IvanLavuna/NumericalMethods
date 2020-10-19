@@ -9,11 +9,13 @@
 #include <iostream>
 #include <fstream>
 #include <sstream>
-#include <vector>
 #include <cstring>
 #include <cmath>
 #include <complex>
-
+#include <vector>
+#include <initializer_list>
+// TODO: after writing Matrix class integrate this with this code
+//#include "Matrix.h"
 
 
 /// Some defines to work more easily with flags
@@ -43,7 +45,7 @@ namespace nm
 	typedef vector<double> RowMatrix;
 	typedef vector<std::complex<double>> ComplexRow;
 	typedef vector<vector<std::complex<double>>> ComplexMatrix;
-
+	typedef long long ll;
 	/** structure which identifies P, L and U matrices in
  * PA = LU factorization **/
 

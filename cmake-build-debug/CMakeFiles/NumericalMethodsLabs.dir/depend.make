@@ -4,9 +4,9 @@
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: ../include/Basic.h
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: ../src/Basic.cpp
 
-CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o: ../include/Basic.h
-CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o: ../include/LargeDem.h
-CMakeFiles/NumericalMethodsLabs.dir/src/LargeDem.cpp.o: ../src/LargeDem.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: ../include/Basic.h
+CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: ../src/Matrix.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: ../src/Matrix.h
 
 CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: ../include/Basic.h
 CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: ../include/SLAE.h
@@ -15,4 +15,10 @@ CMakeFiles/NumericalMethodsLabs.dir/src/SLAE.cpp.o: ../src/SLAE.cpp
 CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: ../include/Basic.h
 CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: ../include/SLAE.h
 CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: ../testing/Gauss_Jordan.cpp
+CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: ../testing/TestGenerator.h
+
+CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o: ../include/Basic.h
+CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o: ../include/SLAE.h
+CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o: ../testing/TestGenerator.cpp
+CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o: ../testing/TestGenerator.h
 

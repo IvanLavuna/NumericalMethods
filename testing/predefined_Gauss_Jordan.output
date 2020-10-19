@@ -1,0 +1,29 @@
+#Test 1
+Solution to this system of equation:
+There exist one solution.
+0.830303 0.102273 -1.08333 0.984848 
+Determinant: 1056
+
+#Test 2
+Solution to this system of equation:
+There exist one solution.
+0.666667 -2 -0.75 
+Determinant: 12
+
+#Test 3
+Solution to this system of equation:
+There exist one solution.
+0 2 0.333333 -1.5 
+Determinant: -954
+
+#Test 4
+Solution to this system of equation:
+There don't exist any solution.
+Determinant: 0
+
+#Test 5
+Solution to this system of equation:
+There exist infinity solutions. One of them is.
+0 0 0 
+Determinant: 0
+

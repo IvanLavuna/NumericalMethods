@@ -1,6 +1,5 @@
 #include <iostream>
-#include "LargeDem.h"
-#include "SLAE.h"
+#include "LinearAlgebra.h"
 #include <iomanip>
 using namespace nm;
 using namespace std;

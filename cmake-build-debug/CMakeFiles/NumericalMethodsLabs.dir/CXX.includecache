@@ -13,20 +13,22 @@ fstream
 -
 sstream
 -
-vector
--
 cstring
 -
 cmath
 -
 complex
 -
+vector
+-
+initializer_list
+-
 
-../include/SLAE.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp
+Matrix.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.h
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.h
 Basic.h
-../include/Basic.h
-
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp
-SLAE.h
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/SLAE.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.h
 

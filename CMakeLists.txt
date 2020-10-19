@@ -3,8 +3,9 @@ project(NumericalMethodsLabs)
 
 
 set(CMAKE_CXX_STANDARD 14)
-set(SOURCE_FILES testing/Gauss_Jordan.cpp  src/SLAE.cpp src/LargeDem.cpp
-        include/LargeDem.h include/Basic.h src/Basic.cpp)
+set(SOURCE_FILES testing/Gauss_Jordan.cpp  src/LinearAlgebra.cpp
+        src/Basic.cpp testing/TestGenerator.cpp
+        testing/TestGenerator.h src/Matrix.cpp src/Matrix.h)
 include_directories(src include testing)
 
 add_executable(NumericalMethodsLabs ${SOURCE_FILES})
