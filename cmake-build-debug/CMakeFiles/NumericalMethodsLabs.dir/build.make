@@ -77,87 +77,95 @@ include CMakeFiles/NumericalMethodsLabs.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/NumericalMethodsLabs.dir/flags.make
 
-CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
-CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o: ../testing/Gauss_Jordan.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp
+CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch: CMakeFiles/NumericalMethodsLabs.dir/flags.make
+CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.cxx
+CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -x c++-header -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -o CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch -c /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.cxx
 
-CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp > CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i
+CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -x c++-header -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -E /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.cxx > CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.i
 
-CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp -o CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s
+CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -x c++-header -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -S /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.cxx -o CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.s
 
 CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
 CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o: ../src/LinearAlgebra.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -o CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp
 
 CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.i
 
 CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.s
 
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: ../src/Basic.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -o CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp
 
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i
 
 CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s
-
-CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
-CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o: ../testing/TestGenerator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp
-
-CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp > CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.i
-
-CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp -o CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s
 
 CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
 CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: ../src/Matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -o CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp
 
 CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.i
 
 CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.s
+
+CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/flags.make
+CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -o CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o -c /home/ivan/CLionProjects/NumericalMethodsLabs/src/main.cpp
+
+CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -E /home/ivan/CLionProjects/NumericalMethodsLabs/src/main.cpp > CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.i
+
+CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -Winvalid-pch -include /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx -S /home/ivan/CLionProjects/NumericalMethodsLabs/src/main.cpp -o CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.s
 
 # Object files for target NumericalMethodsLabs
 NumericalMethodsLabs_OBJECTS = \
-"CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o" \
 "CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o" \
 "CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o" \
-"CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o" \
-"CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o"
+"CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o" \
+"CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o"
 
 # External object files for target NumericalMethodsLabs
 NumericalMethodsLabs_EXTERNAL_OBJECTS =
 
-NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o
+NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o
-NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o
+NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/build.make
 NumericalMethodsLabs: CMakeFiles/NumericalMethodsLabs.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable NumericalMethodsLabs"

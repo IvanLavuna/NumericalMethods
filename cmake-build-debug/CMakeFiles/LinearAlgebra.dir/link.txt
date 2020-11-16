@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -g  -shared -Wl,-soname,libLinearAlgebra.so -o libLinearAlgebra.so CMakeFiles/LinearAlgebra.dir/src/LinearAlgebra.cpp.o CMakeFiles/LinearAlgebra.dir/src/Basic.cpp.o CMakeFiles/LinearAlgebra.dir/src/Matrix.cpp.o CMakeFiles/LinearAlgebra.dir/src/main.cpp.o   -L/home/ivan/CLionProjects/NumericalMethodsLabs/lib/lib 

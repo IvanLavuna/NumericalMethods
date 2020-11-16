@@ -131,6 +131,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named Test
+
+# Build rule for target.
+Test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Test
+.PHONY : Test
+
+# fast build rule for target.
+Test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
+.PHONY : Test/fast
+
+#=============================================================================
 # Target rules for targets named NumericalMethodsLabs
 
 # Build rule for target.
@@ -143,6 +156,34 @@ NumericalMethodsLabs/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/build
 .PHONY : NumericalMethodsLabs/fast
 
+#=============================================================================
+# Target rules for targets named LinearAlgebra
+
+# Build rule for target.
+LinearAlgebra: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 LinearAlgebra
+.PHONY : LinearAlgebra
+
+# fast build rule for target.
+LinearAlgebra/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/build
+.PHONY : LinearAlgebra/fast
+
+# target to build an object file
+cmake_pch.hxx.gch:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch
+.PHONY : cmake_pch.hxx.gch
+
+# target to preprocess a source file
+cmake_pch.hxx.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.i
+.PHONY : cmake_pch.hxx.i
+
+# target to generate assembly for a file
+cmake_pch.hxx.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.s
+.PHONY : cmake_pch.hxx.s
+
 src/Basic.o: src/Basic.cpp.o
 
 .PHONY : src/Basic.o
@@ -150,6 +191,7 @@ src/Basic.o: src/Basic.cpp.o
 # target to build an object file
 src/Basic.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/Basic.cpp.o
 .PHONY : src/Basic.cpp.o
 
 src/Basic.i: src/Basic.cpp.i
@@ -159,6 +201,7 @@ src/Basic.i: src/Basic.cpp.i
 # target to preprocess a source file
 src/Basic.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/Basic.cpp.i
 .PHONY : src/Basic.cpp.i
 
 src/Basic.s: src/Basic.cpp.s
@@ -168,6 +211,7 @@ src/Basic.s: src/Basic.cpp.s
 # target to generate assembly for a file
 src/Basic.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/Basic.cpp.s
 .PHONY : src/Basic.cpp.s
 
 src/LinearAlgebra.o: src/LinearAlgebra.cpp.o
@@ -177,6 +221,7 @@ src/LinearAlgebra.o: src/LinearAlgebra.cpp.o
 # target to build an object file
 src/LinearAlgebra.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/LinearAlgebra.cpp.o
 .PHONY : src/LinearAlgebra.cpp.o
 
 src/LinearAlgebra.i: src/LinearAlgebra.cpp.i
@@ -186,6 +231,7 @@ src/LinearAlgebra.i: src/LinearAlgebra.cpp.i
 # target to preprocess a source file
 src/LinearAlgebra.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/LinearAlgebra.cpp.i
 .PHONY : src/LinearAlgebra.cpp.i
 
 src/LinearAlgebra.s: src/LinearAlgebra.cpp.s
@@ -195,6 +241,7 @@ src/LinearAlgebra.s: src/LinearAlgebra.cpp.s
 # target to generate assembly for a file
 src/LinearAlgebra.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/LinearAlgebra.cpp.s
 .PHONY : src/LinearAlgebra.cpp.s
 
 src/Matrix.o: src/Matrix.cpp.o
@@ -204,6 +251,7 @@ src/Matrix.o: src/Matrix.cpp.o
 # target to build an object file
 src/Matrix.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/Matrix.cpp.o
 .PHONY : src/Matrix.cpp.o
 
 src/Matrix.i: src/Matrix.cpp.i
@@ -213,6 +261,7 @@ src/Matrix.i: src/Matrix.cpp.i
 # target to preprocess a source file
 src/Matrix.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/Matrix.cpp.i
 .PHONY : src/Matrix.cpp.i
 
 src/Matrix.s: src/Matrix.cpp.s
@@ -222,34 +271,65 @@ src/Matrix.s: src/Matrix.cpp.s
 # target to generate assembly for a file
 src/Matrix.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/Matrix.cpp.s
 .PHONY : src/Matrix.cpp.s
 
-testing/Gauss_Jordan.o: testing/Gauss_Jordan.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : testing/Gauss_Jordan.o
+.PHONY : src/main.o
 
 # target to build an object file
-testing/Gauss_Jordan.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o
-.PHONY : testing/Gauss_Jordan.cpp.o
+src/main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-testing/Gauss_Jordan.i: testing/Gauss_Jordan.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : testing/Gauss_Jordan.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-testing/Gauss_Jordan.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.i
-.PHONY : testing/Gauss_Jordan.cpp.i
+src/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-testing/Gauss_Jordan.s: testing/Gauss_Jordan.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : testing/Gauss_Jordan.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-testing/Gauss_Jordan.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.s
-.PHONY : testing/Gauss_Jordan.cpp.s
+src/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+testing/IterativeMethods.o: testing/IterativeMethods.cpp.o
+
+.PHONY : testing/IterativeMethods.o
+
+# target to build an object file
+testing/IterativeMethods.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/IterativeMethods.cpp.o
+.PHONY : testing/IterativeMethods.cpp.o
+
+testing/IterativeMethods.i: testing/IterativeMethods.cpp.i
+
+.PHONY : testing/IterativeMethods.i
+
+# target to preprocess a source file
+testing/IterativeMethods.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/IterativeMethods.cpp.i
+.PHONY : testing/IterativeMethods.cpp.i
+
+testing/IterativeMethods.s: testing/IterativeMethods.cpp.s
+
+.PHONY : testing/IterativeMethods.s
+
+# target to generate assembly for a file
+testing/IterativeMethods.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/IterativeMethods.cpp.s
+.PHONY : testing/IterativeMethods.cpp.s
 
 testing/TestGenerator.o: testing/TestGenerator.cpp.o
 
@@ -257,7 +337,7 @@ testing/TestGenerator.o: testing/TestGenerator.cpp.o
 
 # target to build an object file
 testing/TestGenerator.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/TestGenerator.cpp.o
 .PHONY : testing/TestGenerator.cpp.o
 
 testing/TestGenerator.i: testing/TestGenerator.cpp.i
@@ -266,7 +346,7 @@ testing/TestGenerator.i: testing/TestGenerator.cpp.i
 
 # target to preprocess a source file
 testing/TestGenerator.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/TestGenerator.cpp.i
 .PHONY : testing/TestGenerator.cpp.i
 
 testing/TestGenerator.s: testing/TestGenerator.cpp.s
@@ -275,7 +355,7 @@ testing/TestGenerator.s: testing/TestGenerator.cpp.s
 
 # target to generate assembly for a file
 testing/TestGenerator.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/TestGenerator.cpp.s
 .PHONY : testing/TestGenerator.cpp.s
 
 # Help Target
@@ -286,7 +366,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... LinearAlgebra"
 	@echo "... NumericalMethodsLabs"
+	@echo "... Test"
+	@echo "... cmake_pch.hxx.gch"
+	@echo "... cmake_pch.hxx.i"
+	@echo "... cmake_pch.hxx.s"
 	@echo "... src/Basic.o"
 	@echo "... src/Basic.i"
 	@echo "... src/Basic.s"
@@ -296,9 +381,12 @@ help:
 	@echo "... src/Matrix.o"
 	@echo "... src/Matrix.i"
 	@echo "... src/Matrix.s"
-	@echo "... testing/Gauss_Jordan.o"
-	@echo "... testing/Gauss_Jordan.i"
-	@echo "... testing/Gauss_Jordan.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... testing/IterativeMethods.o"
+	@echo "... testing/IterativeMethods.i"
+	@echo "... testing/IterativeMethods.s"
 	@echo "... testing/TestGenerator.o"
 	@echo "... testing/TestGenerator.i"
 	@echo "... testing/TestGenerator.s"

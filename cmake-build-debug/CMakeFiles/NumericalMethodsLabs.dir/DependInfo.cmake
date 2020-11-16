@@ -4,18 +4,23 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.cxx" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch"
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch"
   "/home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.cpp" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
   "/home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o"
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o"
   "/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o"
-  "/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o"
-  "/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o"
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o"
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/src/main.cpp" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o"
+  "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx" "/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../src"
   "../include"
+  "../src"
   "../testing"
   )
 

@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Tes.dir/testing/TestGenerator.cpp.o CMakeFiles/Tes.dir/testing/Gauss_Jordan.cpp.o  -o Tes 

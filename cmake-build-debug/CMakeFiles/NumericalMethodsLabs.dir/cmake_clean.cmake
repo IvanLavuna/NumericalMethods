@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch"
   "CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o"
   "CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o"
   "CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o"
-  "CMakeFiles/NumericalMethodsLabs.dir/testing/Gauss_Jordan.cpp.o"
-  "CMakeFiles/NumericalMethodsLabs.dir/testing/TestGenerator.cpp.o"
+  "CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o"
   "NumericalMethodsLabs"
   "NumericalMethodsLabs.pdb"
 )

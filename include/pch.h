@@ -1,0 +1,8 @@
+//
+// Created by ivan on 19.10.20.
+//
+
+#ifndef NUMERICALMETHODSLABS_PCH_H
+#define NUMERICALMETHODSLABS_PCH_H
+
+#endif //NUMERICALMETHODSLABS_PCH_H

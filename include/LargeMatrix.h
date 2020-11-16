@@ -1,0 +1,15 @@
+//
+// Created by ivan on 20.10.20.
+//
+
+#ifndef NUMERICALMETHODSLABS_LARGEMATRIX_H
+#define NUMERICALMETHODSLABS_LARGEMATRIX_H
+
+
+class LargeMatrix
+{
+
+};
+
+
+#endif //NUMERICALMETHODSLABS_LARGEMATRIX_H

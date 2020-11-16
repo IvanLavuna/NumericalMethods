@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Test.dir/testing/TestGenerator.cpp.o CMakeFiles/Test.dir/testing/IterativeMethods.cpp.o  -o Test   -L/home/ivan/CLionProjects/NumericalMethodsLabs/lib/lib  -Wl,-rpath,/home/ivan/CLionProjects/NumericalMethodsLabs/lib/lib:/home/ivan/CLionProjects/NumericalMethodsLabs/lib ../lib/libLinearAlgebra.so 

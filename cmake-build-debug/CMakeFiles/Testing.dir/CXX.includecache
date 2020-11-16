@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Gauss_Jordan.cpp
+iostream
+/home/ivan/CLionProjects/NumericalMethodsLabs/testing/iostream
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp
+

@@ -7,6 +7,22 @@
 #IncludeRegexTransform: 
 
 ../include/Basic.h
+complex
+-
+Matrix.h
+../include/Matrix.h
+
+../include/LinearAlgebra.h
+vector
+-
+iostream
+-
+Basic.h
+../include/Basic.h
+
+../include/Matrix.h
+
+../include/pch.h
 iostream
 -
 fstream
@@ -24,11 +40,31 @@ vector
 initializer_list
 -
 
-/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.cpp
-Matrix.h
-/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+/home/ivan/CLionProjects/NumericalMethodsLabs/include/pch.h
+-
 
-/home/ivan/CLionProjects/NumericalMethodsLabs/src/Matrix.h
-Basic.h
-/home/ivan/CLionProjects/NumericalMethodsLabs/src/Basic.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/include/pch.h
+iostream
+-
+fstream
+-
+sstream
+-
+cstring
+-
+cmath
+-
+complex
+-
+vector
+-
+initializer_list
+-
+
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.cpp
+pch.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/pch.h
+LinearAlgebra.h
+/home/ivan/CLionProjects/NumericalMethodsLabs/src/LinearAlgebra.h
 

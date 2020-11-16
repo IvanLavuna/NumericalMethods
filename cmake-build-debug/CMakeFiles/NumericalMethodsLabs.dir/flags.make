@@ -6,5 +6,15 @@ CXX_FLAGS = -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ivan/CLionProjects/NumericalMethodsLabs/src -I/home/ivan/CLionProjects/NumericalMethodsLabs/include -I/home/ivan/CLionProjects/NumericalMethodsLabs/testing 
+CXX_INCLUDES = -I/home/ivan/CLionProjects/NumericalMethodsLabs/include -I/home/ivan/CLionProjects/NumericalMethodsLabs/src -I/home/ivan/CLionProjects/NumericalMethodsLabs/testing 
+
+# PCH options: CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx.gch_OPTIONS = -Winvalid-pch;-x;c++-header;-include;/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/NumericalMethodsLabs.dir/src/LinearAlgebra.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/NumericalMethodsLabs.dir/src/Basic.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/NumericalMethodsLabs.dir/src/Matrix.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
+
+# PCH options: CMakeFiles/NumericalMethodsLabs.dir/src/main.cpp.o_OPTIONS = -Winvalid-pch;-include;/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles/NumericalMethodsLabs.dir/cmake_pch.hxx
 
