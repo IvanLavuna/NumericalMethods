@@ -55,10 +55,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/137/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -76,6 +76,7 @@ CMAKE_BINARY_DIR = /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-deb
 all: CMakeFiles/Test.dir/all
 all: CMakeFiles/NumericalMethodsLabs.dir/all
 all: CMakeFiles/LinearAlgebra.dir/all
+all: CMakeFiles/Lagrange.dir/all
 
 .PHONY : all
 
@@ -88,6 +89,7 @@ preinstall:
 clean: CMakeFiles/Test.dir/clean
 clean: CMakeFiles/NumericalMethodsLabs.dir/clean
 clean: CMakeFiles/LinearAlgebra.dir/clean
+clean: CMakeFiles/Lagrange.dir/clean
 
 .PHONY : clean
 
@@ -98,12 +100,12 @@ clean: CMakeFiles/LinearAlgebra.dir/clean
 CMakeFiles/Test.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=12,13,14 "Built target Test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=14,15,16,17 "Built target Test"
 .PHONY : CMakeFiles/Test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/Test.dir/rule
@@ -125,7 +127,7 @@ CMakeFiles/Test.dir/clean:
 CMakeFiles/NumericalMethodsLabs.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NumericalMethodsLabs.dir/build.make CMakeFiles/NumericalMethodsLabs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=6,7,8,9,10,11 "Built target NumericalMethodsLabs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=8,9,10,11,12,13 "Built target NumericalMethodsLabs"
 .PHONY : CMakeFiles/NumericalMethodsLabs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -152,7 +154,7 @@ CMakeFiles/NumericalMethodsLabs.dir/clean:
 CMakeFiles/LinearAlgebra.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target LinearAlgebra"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7 "Built target LinearAlgebra"
 .PHONY : CMakeFiles/LinearAlgebra.dir/all
 
 # Build rule for subdir invocation for target.
@@ -171,6 +173,33 @@ LinearAlgebra: CMakeFiles/LinearAlgebra.dir/rule
 CMakeFiles/LinearAlgebra.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/clean
 .PHONY : CMakeFiles/LinearAlgebra.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/Lagrange.dir
+
+# All Build rule for target.
+CMakeFiles/Lagrange.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target Lagrange"
+.PHONY : CMakeFiles/Lagrange.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/Lagrange.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Lagrange.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/Lagrange.dir/rule
+
+# Convenience name for target.
+Lagrange: CMakeFiles/Lagrange.dir/rule
+
+.PHONY : Lagrange
+
+# clean rule for target.
+CMakeFiles/Lagrange.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/clean
+.PHONY : CMakeFiles/Lagrange.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

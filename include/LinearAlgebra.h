@@ -9,6 +9,8 @@
 #ifndef NUMERICALMETHODSLABS_LAB1_H
 #define NUMERICALMETHODSLABS_LAB1_H
 
+#include <vector>
+#include <iostream>
 #include "Basic.h"
 
 /** Numerical methods space **/
@@ -82,18 +84,6 @@ namespace nm
 
 /**
  * @brief
- * 		multiplies two matrices
- * @exception
- * 		returns exception if number of columns of
- * 		first matrix A is not equal to number of rows
- * 		in matrix B
- * 		time complexity is O(n^3)
- */
-	// TODO : insert this function to Basic.h
-	Matrix multiply(Matrix &A, Matrix &B);
-
-/**
- * @brief
  * 		Solves SLAE using PA = LU factorisation
  * 		Works only on quadratic matrices
  *
@@ -160,13 +150,13 @@ namespace nm
  * cond(A) = ||A|| * inverse(||A||)
  **/
  // TODO: insert this function into Basic.h
-	double conditionNumber(Matrix& A);
+	double conditionNumber(const Matrix& A);
 
 	/**
 	 * Matrix norm is the biggest sum in all rows
 	 * **/
 	// TODO: insert this function into Basic.h
-	double MatrixNorm(Matrix& A);
+	double MatrixNorm(const Matrix& A);
 
 	/**
 	 * vector norm of order p is
@@ -176,12 +166,88 @@ namespace nm
 	 * @return
 	 */
 	// TODO: insert this function into Basic.h
-	double VectorNorm(RowMatrix& A,int p);
+	double VectorNorm(const RowMatrix& A, int p = INF);
 
 	/**
 	 * Solves SLAE with complex numbers using Gauss-Jordan
 	 **/
 	ComplexRow solveSLAEWithComplexElements(ComplexMatrix A);
+
+	// TODO: write algorithm which will transform arbitrary
+	//  matrix into diagonally independent one
+	/**
+	 * @brief
+	 * iterative method for soling SLAE
+	 * initial vector d is {0,0,0,......,0}
+	 * Will for matrices n * n. For regular matrices n * m i am not sure
+	 * IMPORTANT: Matrix A MUST be diagonally dominant!
+	 */
+	RowMatrix SolveSLAEByJacobi(Matrix M);
+
+	/**
+	 * @brief
+	 * iterative method for soling SLAE
+	 * initial vector d is {0,0,0,......,0}
+	 * Will for matrices n * n. For regular matrices n * m i am not sure
+	 * This method is improvement of Jacobi method, so it must work
+	 * quicker
+	 * IMPORTANT: Matrix A MUST be diagonally dominant!
+ */
+	RowMatrix SolveSLAEByGaussSeidel(Matrix M);
+
+	/**
+	 * @brief This value is calculated by power method
+	 * @param M -> n * n Matrix
+	 * @param K -> number of iterations
+	 * @return  Max Eigen Value of Matrix M if Matrix M is n * n,
+	 * 	Eigenvalue - власне значення
+	 */
+	double GetMaxModEigenValue(const Matrix& M);
+
+	/**
+	 * @brief This value is calculated by using GetMaxModEigenValue
+	 * 	function and calculating inverse Matrix
+	 * @param M -> n * n Matrix
+	 * @param K -> number of iterations
+	 * @return  Min Eigen Value of Matrix M if Matrix M is n * n,
+	 * 	Eigenvalue - власне значення
+	 */
+	double GetMinEigenValue(const Matrix& M);
+
+	/**
+	 * @brief This value is calculated by power method
+	 * @param M -> n * n Matrix
+	 * @param K -> number of iterations
+	 * @return  Max Eigen Value of Matrix M if Matrix M is n * n,
+	 * 	Eigenvalue - власне значення
+	 */
+	double GetSecondMaxModEigenValue(const Matrix& M);
+
+	/**
+	 * @brief Jacobi Iterative method
+	 * Matrix must be symmetric else throws an error!
+	 * @param M - symmetric matrix
+	 * @return vector of Eigen values for Matrix M
+	 */
+	RowMatrix GetAllEigenValuesByJacobi(Matrix M);
+
+	/**
+	 * @brief Jacobi Iterative method
+	 * Matrix must be symmetric else throws an error!
+	 * Matrix cannot be 1 x 1(Gives segmentation error)
+	 * @param M - symmetric matrix
+	 * @return vector of Eigen values for Matrix M
+	 */
+	pair<RowMatrix, Matrix> GetAllEigenValuesAndEigenVectorsByJacobi(Matrix M);
+
+
+	/**
+	 * @brief Lagrangian method for interpolation of a function
+	 * @throws an exception if parameter x in points somewhere repeats
+	 * @param points - vector of points
+	 * return value of function with given X and points
+	 */
+	 double GetLagrangianValueFunction(vector<pair<double, double>>& points, double X);
 }
 
 

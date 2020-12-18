@@ -11,9 +11,9 @@
 /** Matrix class that uses int his basis vector of vectors
  *
  * **/
-#include "Basic.h"
+
 using std::vector;
-using nm::ll;
+
 class Matrix : public vector<vector<double>>
 {
 private:
@@ -26,7 +26,7 @@ public:
 		_n(n),
 		_m(m)
 	{}
-	Matrix(std::initializer_list<std::initializer_list<double>> list);
+	explicit Matrix(std::initializer_list<std::initializer_list<double>> list);
 
 	int rowSz()    const{ return _n; }
 	int columnSz() const{ return _m; }
@@ -57,12 +57,6 @@ public:
 	}
 
 };
-
-
-//class RowMatrix : public vector<double>
-//{
-//
-//};
 
 
 #endif //NUMERICALMETHODSLABS_MATRIX_H

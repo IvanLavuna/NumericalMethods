@@ -1,7 +1,7 @@
 //
 // Created by ivan on 06.10.20.
 //
-
+#include "pch.h"
 #include "LinearAlgebra.h"
 
 namespace nm
@@ -192,7 +192,7 @@ namespace nm
 		int n = matrix.size();
 
 		/// creating matrix already filled with zeros
-		Matrix L(n, vector<double>(n, 0));
+		Matrix L(n, n);
 
 		/// filling diagonals with ones
 		for (int i = 0; i < n; ++i) L[i][i] = 1;
@@ -205,7 +205,7 @@ namespace nm
 				if (abs(matrix[i][i]) < EPS)
 				{
 					SET_NO_SOLUTION;
-					return {Matrix(), Matrix()};
+					return {Matrix(0,0), Matrix(0,0)};
 				}
 				double mul = matrix[j][i] / matrix[i][i];
 				L[j][i] = mul;
@@ -229,7 +229,7 @@ namespace nm
 		int n = A.size();
 
 		/** creates and fills matrix with zeros**/
-		Matrix L(n, vector<double>(n, 0));
+		Matrix L(n, n);
 
 
 		/// starting particularly like in Gauss elimination algorithm
@@ -246,7 +246,7 @@ namespace nm
 			if (abs(A[pivot][i]) < EPS)
 			{
 				SET_NO_SOLUTION;
-				return {Matrix(), Matrix()};
+				return {Matrix(0,0), Matrix(0,0)};
 			}
 			/// swapping matrices
 			A[i].swap(A[pivot]);
@@ -280,8 +280,8 @@ namespace nm
 		int n = A.size();
 
 		/** creates and fills matrix with zeros **/
-		Matrix L(n, vector<double>(n, 0));
-		Matrix P(n, RowMatrix(n, 0));
+		Matrix L(n,n);
+		Matrix P(n, n);
 		for (int i = 0; i < n; ++i) P[i][i] = 1;
 
 
@@ -299,7 +299,7 @@ namespace nm
 			if (abs(A[pivot][i]) < EPS)
 			{
 				SET_NO_SOLUTION;
-				return {Matrix(), Matrix(), Matrix()};
+				return {Matrix(0,0), Matrix(0,0), Matrix(0,0)};
 			}
 			/// swapping matrices
 			A[i].swap(A[pivot]);
@@ -324,30 +324,6 @@ namespace nm
 		return {P, L, A};
 	}
 
-	Matrix multiply(Matrix &A, Matrix &B)
-	{
-		if (A[0].size() != B.size())
-		{
-			SET_UNDEFINED_BEHAVIOUR;
-			throw std::invalid_argument(ERROR_MESSAGE("Invalid argument - You can't multiply such matrices!"));
-		}
-
-		Matrix C(A.size(), vector<double>(B[0].size(), 0));
-
-		for (int i = 0; i < A.size(); ++i)
-		{
-			for (int j = 0; j < B[0].size(); ++j)
-			{
-				for (int k = 0; k < B.size(); ++k)
-				{
-					C[i][j] += (A[i][k] * B[k][j]);
-				}
-			}
-		}
-		SET_ONE_SOLUTION;
-		return C;
-	}
-
 	RowMatrix solveSLAEByLUFactorization(Matrix &matrix)
 	{
 		if (matrix.size() != matrix[0].size() - 1)
@@ -357,8 +333,8 @@ namespace nm
 		}
 		int n = matrix.size();
 
-		Matrix A(n, RowMatrix(n));
-		Matrix B(n, RowMatrix(1, 0)); /// ColumnMatrix
+		Matrix A(n, n);
+		Matrix B(n, 1); /// ColumnMatrix
 
 		/** copying matrix into A and B**/
 		for (int i = 0; i < n; ++i)
@@ -381,7 +357,7 @@ namespace nm
 		}
 
 		/// actual algorithm
-		B = nm::multiply(P, B);
+		B = P * B;
 
 		RowMatrix C(n, 0); /// temporary matrix
 		RowMatrix X(n, 0); /// answer matrix
@@ -421,7 +397,7 @@ namespace nm
 		int n = A.size();
 
 		/** Initially I is E matrix,but after algorithm it becomes Inverse **/
-		Matrix I(n, RowMatrix(n, 0));
+		Matrix I(n, n);
 		for (int i = 0; i < n; i++) I[i][i] = 1;
 
 		for (int i = 0; i < n; ++i)
@@ -436,7 +412,7 @@ namespace nm
 			if (abs(A[pivot][i]) < EPS) /// there do not exist I matrix
 			{
 				SET_NO_SOLUTION;
-				return Matrix();
+				return Matrix(0,0);
 			}
 			A[i].swap(A[pivot]);
 			I[i].swap(I[pivot]);
@@ -472,7 +448,7 @@ namespace nm
 			throw std::invalid_argument(ERROR_MESSAGE("Invalid argument - Matrix must be symmetric!"));
 		}
 		int n = A.size();
-		Matrix L(n, RowMatrix(n, 0));
+		Matrix L(n, n);
 
 		/// using formula proposed by Wikipedia, I managed to get
 		/// this factorization
@@ -490,7 +466,7 @@ namespace nm
 					if (L[i][i] < 0)
 					{
 						SET_UNDEFINED_BEHAVIOUR;
-						return L_U();
+						return {Matrix(0,0),Matrix(0,0)};
 					}
 					L[i][i] = sqrt(L[i][i]);
 				} else
@@ -503,14 +479,14 @@ namespace nm
 					if (abs(L[j][j]) < EPS)
 					{
 						SET_NO_SOLUTION;
-						return L_U();
+						return {Matrix(0,0),Matrix(0,0)};
 					}
 					L[i][j] /= L[j][j];
 				}
 			}
 		}
 
-		Matrix U = nm::getTransparentMatrix(L);
+		Matrix U = nm::TransparentMatrix(L);
 
 		SET_ONE_SOLUTION;
 		return {L, U};
@@ -583,6 +559,7 @@ namespace nm
 				/** if elem is already = 0 we don't need to do anything **/
 				if (abs(A[j][i]) < EPS) continue;
 				arb[i] = true;
+
 				double c = A[i][i] / root;
 				double s = A[j][i] / root;
 
@@ -619,6 +596,7 @@ namespace nm
 			}
 		}
 
+		// TODO: this function works wrong test
 
 		for (int i = 0; i < m; ++i)
 		{
@@ -634,14 +612,14 @@ namespace nm
 
 	}
 
-	double conditionNumber(Matrix &A)
+	double conditionNumber(const Matrix &A)
 	{
 		Matrix inv_A = nm::getInverseMatrix(A);
 		double cond = nm::MatrixNorm(A) * nm::MatrixNorm(inv_A);
 		return cond;
 	}
 
-	double MatrixNorm(Matrix &A)
+	double MatrixNorm(const Matrix &A)
 	{
 		double maxSum = 0;
 		int n = A.size(), m = A[0].size();
@@ -657,7 +635,7 @@ namespace nm
 		return maxSum;
 	}
 
-	double VectorNorm(RowMatrix &A, int p)
+	double VectorNorm(const RowMatrix &A, int p)
 	{
 		if (p == INF)
 		{
@@ -756,5 +734,299 @@ namespace nm
 		SET_ONE_SOLUTION;
 		return solution;
 	}
+
+	RowMatrix SolveSLAEByJacobi(Matrix M)
+	{
+		int n = M.rowSz(), m = M.columnSz() - 1;
+		RowMatrix X(m,0);
+		Matrix C(n,m);
+
+		for (int i = 0; i < n; ++i)
+		{
+			for (int j = 0; j < m; ++j)
+			{
+				C[i][j] = -(M[i][j]/M[i][i]);
+			}
+		}
+
+		double q = MatrixNorm(C);
+		double p1 = (1 - q) * EPS / q;
+		double p2;
+		do
+		{
+			RowMatrix curX(m,0);
+
+			for (int j = 0; j < m; ++j) curX[j] = M[j][m];
+
+			for (int j = 0; j < n; ++j)
+			{
+				for (int k = 0; k < j; ++k)
+					curX[j] -= (M[j][k] * X[k]);
+
+				for (int k = j + 1; k < m; ++k)
+					curX[j] -= (M[j][k] * X[k]);
+
+				curX[j] /= M[j][j];
+			}
+
+			RowMatrix DX(m,0); /// delta X
+
+			for (int i = 0; i < m; ++i)
+				DX[i] = abs(curX[i] - X[i]);
+
+			p2 = VectorNorm(DX);
+
+			X = curX;
+
+		} while(abs(p2) >= abs(p1));
+
+		SET_ONE_SOLUTION;
+		return X;
+
+	}
+
+	RowMatrix SolveSLAEByGaussSeidel(Matrix M)
+	{
+		int n = M.rowSz(), m = M.columnSz() - 1;
+		RowMatrix X(m,0);
+		Matrix C(n,m);
+
+		for (int i = 0; i < n; ++i)
+		{
+			for (int j = 0; j < m; ++j)
+			{
+				C[i][j] = -(M[i][j] / M[i][i]);
+			}
+		}
+
+		double q = MatrixNorm(C);
+		double p1 = abs((1 - q) * EPS / q);
+		double p2;
+		do
+		{
+			RowMatrix curX(m,0);
+
+			for (int j = 0; j < m; ++j) curX[j] = M[j][m];
+
+			for (int j = 0; j < n; ++j)
+			{
+				for (int k = 0; k < j; ++k)
+					curX[j] -= (M[j][k] * curX[k]);
+
+				for (int k = j + 1; k < m; ++k)
+					curX[j] -= (M[j][k] * X[k]);
+
+				curX[j] /= M[j][j];
+			}
+
+			RowMatrix DX(m,0); /// delta X
+
+			for (int i = 0; i < m; ++i)
+				DX[i] = abs(curX[i] - X[i]);
+
+			p2 = VectorNorm(DX);
+
+			X = curX;
+		} while(abs(p2) > abs(p1));
+
+	SET_ONE_SOLUTION;
+
+	return X;
+
+	}
+
+	double GetMaxModEigenValue(const Matrix& M)
+	{
+		if(M.columnSz() != M.rowSz())
+			throw std::invalid_argument(ERROR_MESSAGE("Matrix must be quadratic(n x n)!"));
+
+		int n = M.size();
+		double pr_e_val, cur_e_val = 0, pr_y_val = 1;
+		Matrix Y(n,1); /** starting column Matrix **/
+		for (int i = 0; i < n; ++i) Y[i][0] = 1;
+
+		do
+		{
+			pr_e_val = cur_e_val;
+			Y = M * Y;
+			cur_e_val = Y[0][0] / pr_y_val;
+			pr_y_val = Y[0][0];
+		} while(abs(pr_e_val - cur_e_val) > EPS);
+
+		return cur_e_val;
+	}
+
+	double GetMinEigenValue(const Matrix& M)
+	{
+		if(M.columnSz() != M.rowSz())
+			throw std::invalid_argument(ERROR_MESSAGE("Matrix must be quadratic(n x n)!"));
+
+		Matrix In = getInverseMatrix(M);
+		double l2 = GetMaxModEigenValue(In);
+		return 1. / l2;
+	}
+
+	double GetSecondMaxModEigenValue(const Matrix &M)
+	{
+		if(M.columnSz() != M.rowSz())
+			throw std::invalid_argument(ERROR_MESSAGE("Matrix must be quadratic(n x n)!"));
+
+		int n = M.size();
+		double e_max = GetMaxModEigenValue(M);
+
+		Matrix A = M;
+
+		for (int j = 0; j < n; ++j)  A[j][j] -= e_max;
+
+		return GetMaxModEigenValue(A) + e_max;
+	}
+
+	RowMatrix GetAllEigenValuesByJacobi(Matrix M)
+	{
+		if(!isSymmetric(M))
+			throw std::invalid_argument(ERROR_MESSAGE("Matrix must be symmetric!"));
+
+		int n = M.size();
+		RowMatrix EigenValues; EigenValues.reserve(n);
+
+		while(true)
+		{
+			double max_val = M[0][1];
+			int I = 0, J = 1;
+			double O = M_PI / 4; /// teta angle
+			Matrix _M = M;
+
+			/** finding max by mod non-diagonal element **/
+			for (int i = 0; i < n; ++i)
+			{
+				for (int j = 0; j < n; ++j)
+				{
+					if(i == j) continue;
+					if(abs(max_val) < abs(M[i][j]))
+					{
+						max_val = M[i][j];
+						I = i, J = j;
+					}
+				}
+			}
+
+			if(abs(max_val) < EPS) break;
+
+			/** calculating angle teta **/
+			if(M[J][J] - M[I][I] != 0)
+				O = 0.5 * atan(max_val / (M[J][J] - M[I][I]));
+
+			double s = sin(O), c = cos(O);
+
+			/// some complex computation just NOT to calculate Transparent(G) * M * G
+			_M[I][I] = c * c * M[I][I] - 2 * s * c * max_val + s * s * M[J][J];
+			_M[J][J] = s * s * M[I][I] + 2 * s * c * max_val + c * c * M[J][J];
+			_M[I][J] = (c * c - s * s) * max_val + s * c * (M[I][I] - M[J][J]);
+			_M[J][I] = _M[I][J];
+			for (int k = 0; k < n; ++k)
+			{
+				if(k == I || k == J) continue;
+				_M[I][k] = c * M[I][k] - s * M[J][k];
+				_M[k][I] = _M[I][k];
+				_M[J][k] = s * M[I][k] + c * M[J][k];
+				_M[k][J] = _M[J][k];
+			}
+
+			M = _M;
+		}
+
+		for (int i = 0; i < n; ++i) EigenValues.push_back(M[i][i]);
+		return EigenValues;
+	}
+
+	pair<RowMatrix, Matrix> GetAllEigenValuesAndEigenVectorsByJacobi(Matrix M)
+	{
+		if(!isSymmetric(M))
+			throw std::invalid_argument(ERROR_MESSAGE("Matrix must be symmetric!"));
+
+		int n = M.size();
+
+		RowMatrix EigenValues; EigenValues.reserve(n);
+		Matrix U = IdentityMatrix(n); /// Columns of this matrix will be EigenVectors
+
+		while(true)
+		{
+			double max_val = M[0][1];
+			int I = 0, J = 1;
+			double O = M_PI / 4; /// teta angle
+			Matrix G = IdentityMatrix(n); /// matrix of turns of Givens
+			Matrix _M = M;
+
+			/** finding max by mod non-diagonal element **/
+			for (int i = 0; i < n; ++i)
+			{
+				for (int j = 0; j < n; ++j)
+				{
+					if(i == j) continue;
+					if(abs(max_val) < abs(M[i][j]))
+					{
+						max_val = M[i][j];
+						I = i, J = j;
+					}
+				}
+			}
+
+			if(abs(max_val) < EPS) break;
+
+			/** calculating angle teta **/
+			if(M[J][J] - M[I][I] != 0)
+				O = 0.5 * atan(max_val / (M[J][J] - M[I][I]));
+
+			double s = sin(O), c = cos(O);
+
+			G[I][J] = s, G[J][I] = -s, G[I][I] = c, G[J][J] = c;
+
+			/// some complex computation just NOT to calculate Transparent(G) * M * G
+			_M[I][I] = c * c * M[I][I] - 2 * s * c * max_val + s * s * M[J][J];
+			_M[J][J] = s * s * M[I][I] + 2 * s * c * max_val + c * c * M[J][J];
+			_M[I][J] = (c * c - s * s) * max_val + s * c * (M[I][I] - M[J][J]);
+			_M[J][I] = _M[I][J];
+			for (int k = 0; k < n; ++k)
+			{
+				if(k == I || k == J) continue;
+				_M[I][k] = c * M[I][k] - s * M[J][k];
+				_M[k][I] = _M[I][k];
+				_M[J][k] = s * M[I][k] + c * M[J][k];
+				_M[k][J] = _M[J][k];
+			}
+
+			M = _M;
+			U *= G;
+		}
+
+		for (int i = 0; i < n; ++i) EigenValues.push_back(M[i][i]);
+
+		return {EigenValues, U};
+	}
+
+	double GetLagrangianValueFunction(vector<pair<double, double>>& points, double X)
+	{
+		SET_UNDEFINED_BEHAVIOUR;
+
+		int n = points.size();
+
+		double res = 0, ra, rb;
+
+		for (int i = 0; i < n; i++)
+		{
+			ra = rb = 1;
+			for (int j = 0; j < n; j++)
+				if (i != j)
+				{
+					ra *= X - points[j].first;
+					rb *= points[i].first - points[j].first;
+				}
+			res += ra * points[i].second / rb;
+		}
+		SET_ONE_SOLUTION;
+		return res;
+	}
 }
+
+
 

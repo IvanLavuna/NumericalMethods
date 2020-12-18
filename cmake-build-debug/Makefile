@@ -59,10 +59,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /snap/clion/129/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/137/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /snap/clion/129/bin/cmake/linux/bin/cmake -E rm -f
+RM = /snap/clion/137/bin/cmake/linux/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -79,7 +79,7 @@ CMAKE_BINARY_DIR = /home/ivan/CLionProjects/NumericalMethodsLabs/cmake-build-deb
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/snap/clion/129/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/137/bin/cmake/linux/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/129/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/137/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -168,6 +168,19 @@ LinearAlgebra: cmake_check_build_system
 LinearAlgebra/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/build
 .PHONY : LinearAlgebra/fast
+
+#=============================================================================
+# Target rules for targets named Lagrange
+
+# Build rule for target.
+Lagrange: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Lagrange
+.PHONY : Lagrange
+
+# fast build rule for target.
+Lagrange/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/build
+.PHONY : Lagrange/fast
 
 # target to build an object file
 cmake_pch.hxx.gch:
@@ -304,6 +317,33 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/LinearAlgebra.dir/build.make CMakeFiles/LinearAlgebra.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+testing/EigenValuesAndVectors.o: testing/EigenValuesAndVectors.cpp.o
+
+.PHONY : testing/EigenValuesAndVectors.o
+
+# target to build an object file
+testing/EigenValuesAndVectors.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/EigenValuesAndVectors.cpp.o
+.PHONY : testing/EigenValuesAndVectors.cpp.o
+
+testing/EigenValuesAndVectors.i: testing/EigenValuesAndVectors.cpp.i
+
+.PHONY : testing/EigenValuesAndVectors.i
+
+# target to preprocess a source file
+testing/EigenValuesAndVectors.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/EigenValuesAndVectors.cpp.i
+.PHONY : testing/EigenValuesAndVectors.cpp.i
+
+testing/EigenValuesAndVectors.s: testing/EigenValuesAndVectors.cpp.s
+
+.PHONY : testing/EigenValuesAndVectors.s
+
+# target to generate assembly for a file
+testing/EigenValuesAndVectors.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/EigenValuesAndVectors.cpp.s
+.PHONY : testing/EigenValuesAndVectors.cpp.s
+
 testing/IterativeMethods.o: testing/IterativeMethods.cpp.o
 
 .PHONY : testing/IterativeMethods.o
@@ -330,6 +370,33 @@ testing/IterativeMethods.s: testing/IterativeMethods.cpp.s
 testing/IterativeMethods.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Test.dir/build.make CMakeFiles/Test.dir/testing/IterativeMethods.cpp.s
 .PHONY : testing/IterativeMethods.cpp.s
+
+testing/LagrangePoints.o: testing/LagrangePoints.cpp.o
+
+.PHONY : testing/LagrangePoints.o
+
+# target to build an object file
+testing/LagrangePoints.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/testing/LagrangePoints.cpp.o
+.PHONY : testing/LagrangePoints.cpp.o
+
+testing/LagrangePoints.i: testing/LagrangePoints.cpp.i
+
+.PHONY : testing/LagrangePoints.i
+
+# target to preprocess a source file
+testing/LagrangePoints.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/testing/LagrangePoints.cpp.i
+.PHONY : testing/LagrangePoints.cpp.i
+
+testing/LagrangePoints.s: testing/LagrangePoints.cpp.s
+
+.PHONY : testing/LagrangePoints.s
+
+# target to generate assembly for a file
+testing/LagrangePoints.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Lagrange.dir/build.make CMakeFiles/Lagrange.dir/testing/LagrangePoints.cpp.s
+.PHONY : testing/LagrangePoints.cpp.s
 
 testing/TestGenerator.o: testing/TestGenerator.cpp.o
 
@@ -366,6 +433,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... Lagrange"
 	@echo "... LinearAlgebra"
 	@echo "... NumericalMethodsLabs"
 	@echo "... Test"
@@ -384,9 +452,15 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... testing/EigenValuesAndVectors.o"
+	@echo "... testing/EigenValuesAndVectors.i"
+	@echo "... testing/EigenValuesAndVectors.s"
 	@echo "... testing/IterativeMethods.o"
 	@echo "... testing/IterativeMethods.i"
 	@echo "... testing/IterativeMethods.s"
+	@echo "... testing/LagrangePoints.o"
+	@echo "... testing/LagrangePoints.i"
+	@echo "... testing/LagrangePoints.s"
 	@echo "... testing/TestGenerator.o"
 	@echo "... testing/TestGenerator.i"
 	@echo "... testing/TestGenerator.s"

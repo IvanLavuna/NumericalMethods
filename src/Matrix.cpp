@@ -2,6 +2,7 @@
 // Created by ivan on 18.10.20.
 //
 
+#include "pch.h"
 #include "Matrix.h"
 using std::cout;
 
@@ -167,5 +168,3 @@ Matrix operator*(const Matrix &M, int n)
 	}
 	return F;
 }
-
-

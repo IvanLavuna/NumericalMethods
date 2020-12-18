@@ -5,31 +5,8 @@
 #ifndef NUMERICALMETHODSLABS_BASIC_H
 #define NUMERICALMETHODSLABS_BASIC_H
 
-
-#include <iostream>
-#include <fstream>
-#include <sstream>
-#include <cstring>
-#include <cmath>
 #include <complex>
-#include <vector>
-#include <initializer_list>
-// TODO: after writing Matrix class integrate this with this code
-//#include "Matrix.h"
-
-
-/// Some defines to work more easily with flags
-#define SET_UNDEFINED_BEHAVIOUR _funcState = UNDEFINED_BEHAVIOUR
-#define SET_ONE_SOLUTION _funcState		  = ONE_SOLUTION
-#define SET_INFINITY_SOLUTIONS _funcState  = INFINITY_SOLUTIONS
-#define SET_NO_SOLUTION _funcState 		  = NO_SOLUTION
-
-#define STRINGIFY(x) #x
-#define TOSTRING(x) STRINGIFY(x)
-#define AT __FILE__ ":" TOSTRING(__LINE__)
-#define ERROR_MESSAGE(DESC) ("error: " AT "\n" "Description: " DESC "\n")
-
-
+#include "Matrix.h"
 
 namespace nm
 {
@@ -41,10 +18,11 @@ namespace nm
 	using std::vector;
 
 /** simple abstractions for better understanding code**/
-	typedef vector<vector<double>> Matrix;
+
+
 	typedef vector<double> RowMatrix;
-	typedef vector<std::complex<double>> ComplexRow;
 	typedef vector<vector<std::complex<double>>> ComplexMatrix;
+	typedef vector<std::complex<double>> ComplexRow;
 	typedef long long ll;
 	/** structure which identifies P, L and U matrices in
  * PA = LU factorization **/
@@ -91,15 +69,15 @@ namespace nm
 /**
  * Returns true if matrix is summetric otherwise returns false
  * **/
-	bool isSymmetric(Matrix &A);
+	bool isSymmetric(const Matrix &A);
 
 /**
  * Transparent matrix A is matrix whose rows equals to columns of
  * same matrix A(swapping rows with columns)
  * **/
-	Matrix getTransparentMatrix(Matrix &A);
+	Matrix TransparentMatrix(Matrix &A);
 
-	Matrix getTransparentMatrix(RowMatrix &A);
+	Matrix TransparentMatrix(RowMatrix &A);
 
 /**
  *
@@ -109,6 +87,12 @@ namespace nm
  * @return matrix A[0 : n - 1][0 : m - 1]
  */
 	Matrix copyPart(Matrix &A, int n, int m);
+
+	/**
+	 * @param n - size of squared matrix
+	 * @return Identity matrix of size n
+	 */
+	Matrix IdentityMatrix(int n);
 
 }
 

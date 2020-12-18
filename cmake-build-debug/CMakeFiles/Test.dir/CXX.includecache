@@ -38,27 +38,7 @@ functional
 chrono
 -
 
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/IterativeMethods.cpp
+/home/ivan/CLionProjects/NumericalMethodsLabs/testing/EigenValuesAndVectors.cpp
 TestGenerator.h
--
-
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.cpp
-TestGenerator.h
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.h
-
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/TestGenerator.h
-LinearAlgebra.h
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/LinearAlgebra.h
-Matrix.h
-/home/ivan/CLionProjects/NumericalMethodsLabs/testing/Matrix.h
-fstream
--
-random
--
-iomanip
--
-functional
--
-chrono
 -
 
